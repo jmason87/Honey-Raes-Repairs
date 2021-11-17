@@ -1,18 +1,18 @@
 import React from "react"
-import { CustomerList } from "./customers/CustomerList"
-import { EmployeeList } from "./employees/EmployeeList"
+import { ApplicationViews } from "./ApplicationViews"
+
+import { NavBar } from "./nav/NavBar"
+
 
 
 export const Repairs = () => {
     return (
         <>
+            <NavBar/>
             <h1>Honey Rae's Repair Shop</h1>
             
-            <h2>Customer List</h2>
-            <CustomerList />
+            <ApplicationViews />
 
-            <h2>Employee List</h2>
-            <EmployeeList />
         </>
     )
 }
