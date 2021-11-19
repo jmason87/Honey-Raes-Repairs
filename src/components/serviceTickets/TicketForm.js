@@ -2,7 +2,8 @@ import React, { useState } from "react"
 import { useHistory } from "react-router";
 /*
 in this component, useState will be an object with the keys description and emergency.
-
+the initial value of both are an empty sting and false respectively. as the user interacts with the site
+those will change to whatever the user inputs. *ch.10 video*
 */
 export const TicketForm = () => {
     const [ticket, update] = useState({
@@ -11,9 +12,13 @@ export const TicketForm = () => {
     });
     const history = useHistory()
 
-
-
-    const submitTicket = (evt) => {
+/*
+    this is the submitTicket function that is ivoked in the button element below using onCLick
+    it is taking udpated ticket (line 9) state object and setting it to newTicket variable. 
+    newticket is then used below in the POST fetch to send the new object to the
+    serviceTickets resource. *ch.10 video*
+*/
+      const submitTicket = (evt) => {
         evt.preventDefault()
         const newTicket = {
             description: ticket.description,
@@ -45,7 +50,7 @@ export const TicketForm = () => {
     with copy as an argument which actually sets whatever you typed into the ticket state.
 
     The same is happening on the second onchange for the checkbox, except its listenging for 
-    if it is checked or not and then return true if checked and false if not. 
+    if it is checked or not and then return true if checked and false if not. *ch.10 video*
     */
 
     return (

@@ -39,7 +39,8 @@ component is first rendered and then never again.
 /*
     In this use effect, we passed customers into our array below. Unlike the
     empty array above this is now watching for any changes in customers state
-    and when it hears a change it runs the code in the first arguemt, a function.
+    and when it hears a change it runs the code in the first arguemt, which 
+    is a function.
  */
 
      useEffect(
@@ -68,7 +69,13 @@ component is first rendered and then never again.
         <>
             <div>{totalCustomerMessage}</div>
             {
-                customers.slice(0, 5).map(
+                /*
+                    .slice only shows a chunk of any array, in this case, only 
+                    the first 5 of the array because the first argument is 0, meaning
+                    index 0, and the second is 5, which is where it stops but does not include
+                    that index posiotion so it's only displaying index 0-4.
+                */
+                customers.slice(0, 5).map( 
                     (customerObject) => {
                         return <p key={`customer--${customerObject.id}`}>{customerObject.name}</p>
                     }

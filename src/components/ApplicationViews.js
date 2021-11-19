@@ -5,6 +5,14 @@ import { TicketList } from "./serviceTickets/TicketList"
 import { CustomerList} from "./customers/CustomerList"
 import { TicketForm } from "./serviceTickets/TicketForm"
 
+/*
+    Routes are listening to the url and if the path attribute matches that of the 
+    to attribute on the link component it knows to run its child component which 
+    we import above.
+
+    The sole responsibility of this module is to pattern match.
+*/
+
 export const ApplicationViews = () => {
     return (
         <>

@@ -2,6 +2,11 @@ import React from "react"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
 
+/*
+    the link component has one job, which is to generate anchor tags. the "to" attribute
+    is the href path for the anchor tag.
+*/
+
 export const NavBar = (props) => {
     return (
         <ul className="navbar">

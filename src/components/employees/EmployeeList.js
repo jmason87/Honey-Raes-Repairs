@@ -17,9 +17,8 @@ export const EmployeeList = () => {
 
     useEffect(() => {
         /*
-            1. Use .map() to get the specialty of each employee
-            2. Then update a state variable to be a comma-separated string
-                (e.g. "iPhone, Printers, ...")
+            In this useEffect we are mapping through th emeployees array from line 4
+            
         */
        const justSpecialties = employees.map(
            (employeeSpecObj) => employeeSpecObj.specialty)
