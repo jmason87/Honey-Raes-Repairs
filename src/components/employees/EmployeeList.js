@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 export const EmployeeList = () => {
     const [employees, changeEmployee] = useState([])
@@ -18,10 +19,10 @@ export const EmployeeList = () => {
     useEffect(() => {
         /*
             In this useEffect we are mapping through th emeployees array from line 4
-            
+
         */
        const justSpecialties = employees.map(
-           (employeeSpecObj) => employeeSpecObj.specialty)
+           (employeeObj) => employeeObj.specialty)
             setSpecial(justSpecialties.join(", "))
     }, [employees])
 
@@ -33,7 +34,7 @@ export const EmployeeList = () => {
             {
                 employees.map(
                     (employee) => {
-                        return <p key={`employee--${employee.id}`}>{employee.name}</p>
+                        return <p key={`employee--${employee.id}`}><Link to={`/employee/${employee.id}`}>{employee.name}</Link></p>
                     }
                 )
             }

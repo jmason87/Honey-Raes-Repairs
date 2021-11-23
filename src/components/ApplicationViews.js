@@ -4,6 +4,8 @@ import { EmployeeList } from "./employees/EmployeeList"
 import { TicketList } from "./serviceTickets/TicketList"
 import { CustomerList} from "./customers/CustomerList"
 import { TicketForm } from "./serviceTickets/TicketForm"
+import { Ticket } from "./serviceTickets/Ticket"
+import { Employee } from "./employees/Employee"
 
 /*
     Routes are listening to the url and if the path attribute matches that of the 
@@ -28,8 +30,16 @@ export const ApplicationViews = () => {
                 <TicketList />
             </Route>
 
-            <Route path="/tickets/create">
+            <Route exact path="/tickets/create">
                 <TicketForm />
+            </Route>
+
+            <Route path="/tickets/:ticketId(\d+)">
+                <Ticket />
+            </Route>
+
+            <Route path="/employee/:employeeId(\d+)">
+                <Employee />
             </Route>
         </>
     )
